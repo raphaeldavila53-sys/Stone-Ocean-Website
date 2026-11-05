@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JoJo's Bizarre Adventure: Stone Ocean</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #0879c9;
+        color: white;
+      }
+
+      #top {
+        scroll-margin-top: 20px;
+      }
+
+      .hero {
+        min-height: 100vh;
+        padding: 40px 7%;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-inner {
+        width: 100%;
+        max-width: 1400px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .hero-content {
+        flex: 1;
+      }
+
+      h1 {
+        font-size: clamp(35px, 5vw, 65px);
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+
+      .jjba {
+        color: #42baff;
+      }
+
+      .stone-ocean {
+        color: #7cdb45;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        max-width: 550px;
+      }
+
+      .read-more {
+        display: inline-block;
+        background-color: #f5d442;
+        color: #111;
+        padding: 13px 25px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .read-more:hover {
+        background-color: #fff;
+        transform: translateY(-3px);
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        isolation: isolate;
+        padding-right: 30px;
+      }
+
+      .hero-image img {
+        width: 32%;
+        max-width: 150px;
+        height: auto;
+        object-fit: contain;
+        position: relative;
+      }
+
+      /* Jolyne */
+      .hero-image img:nth-child(1) {
+        width: 36%;
+        max-width: 170px;
+        z-index: 1;
+        margin-right: -35px;
+      }
+
+      /* Foo Fighters */
+      .hero-image img:nth-child(2) {
+        width: 32%;
+        max-width: 135px;
+        z-index: 3;
+        margin-left: -20px;
+        margin-right: -20px;
+        transform: translateY(10px);
+      }
+
+      /* Ermes */
+      .hero-image img:nth-child(3) {
+        z-index: 1;
+        margin-left: -35px;
+      }
+
+      /* Story section */
+      #story {
+        background-color: #7cdb45;
+        color: #172b13;
+        padding: 60px 7%;
+      }
+
+      .story-page {
+        max-width: 1100px;
+        margin: auto;
+        padding: 35px;
+        background-color: #f5f5dc;
+        border-radius: 15px;
+      }
+
+      .story-page h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .story-page p {
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .story-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 35px;
+      }
+
+      .important-things,
+      .story-text {
+        width: 50%;
+      }
+
+      .important-things h3,
+      .story-text h3 {
+        font-size: 23px;
+        margin-bottom: 15px;
+      }
+
+      .important-things ul {
+        padding-left: 22px;
+        line-height: 1.8;
+      }
+
+      .fan-club {
+        margin-top: 30px;
+      }
+
+      .fan-club h2 {
+        font-size: 28px;
+      }
+
+      .story-image {
+        width: 100%;
+        max-width: 300px;
+        display: block;
+        margin: 25px auto;
+        border-radius: 10px;
+      }
+
+      .back-top {
+        display: inline-block;
+        margin-top: 20px;
+        color: #172b13;
+        font-weight: bold;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #0879c9;
+        color: white;
+      }
+
+      @media (max-width: 800px) {
+        .hero {
+          padding: 40px 6%;
+        }
+
+        .hero-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-image {
+          width: 100%;
+          margin-top: 25px;
+          justify-content: center;
+          padding-right: 15px;
+        }
+
+        .hero-image img {
+          width: 32%;
+          max-width: 110px;
+        }
+
+        /* Jolyne */
+        .hero-image img:nth-child(1) {
+          width: 36%;
+          max-width: 125px;
+          margin-right: -25px;
+        }
+
+        /* Foo Fighters */
+        .hero-image img:nth-child(2) {
+          width: 32%;
+          max-width: 100px;
+          margin-left: -15px;
+          margin-right: -15px;
+          transform: translateY(7px);
+        }
+
+        /* Ermes */
+        .hero-image img:nth-child(3) {
+          margin-left: -25px;
+        }
+
+        #story {
+          padding: 35px 4%;
+        }
+
+        .story-page {
+          padding: 20px;
+        }
+
+        .story-content {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .important-things,
+        .story-text {
+          width: 100%;
+        }
+
+        .fan-club h2 {
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>
+            <span class="jjba">JoJo's Bizarre Adventure:</span>
+            <span class="stone-ocean">Stone Ocean</span>
+          </h1>
+
+          <p>
+            Follow Jolyne Cujoh as she fights for her freedom inside Green
+            Dolphin Street Prison. Discover the characters, their abilities, and
+            the story of Stone Ocean.
+          </p>
+
+          <a href="#story" class="read-more">Read More</a>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="https://www.giantbomb.com/a/uploads/scale_medium/36/361609/3391922-jolyne_asb_r.png"
+            alt="Jolyne Cujoh"
+          />
+
+          <img
+            src="https://static.jojowiki.com/images/c/cc/latest/20220701142851/Foo_Fighters_ASBR_Render.png"
+            alt="Foo Fighters"
+          />
+
+          <img
+            src="https://static.jojowiki.com/images/thumb/a/a9/latest/20220310021856/Ermes_ASB_R.png/640px-Ermes_ASB_R.png"
+            alt="Ermes Costello"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="story-page">
+        <h2>Welcome to Stone Ocean</h2>
+
+        <p>
+          Stone Ocean is the sixth part of JoJo's Bizarre Adventure. It follows
+          Jolyne Cujoh, who is sent to Green Dolphin Street Prison after being
+          framed for a crime.
+        </p>
+
+        <div class="story-content">
+          <div class="important-things">
+            <h3>Important Characters and Things</h3>
+
+            <ul>
+              <li>Jolyne Cujoh</li>
+              <li>Ermes Costello</li>
+              <li>Foo Fighters</li>
+              <li>Stone Free</li>
+              <li>Kiss</li>
+              <li>Green Dolphin Street Prison</li>
+              <li>Friendship</li>
+            </ul>
+          </div>
+
+          <div class="story-text">
+            <h3>Meet the Characters</h3>
+
+            <p>
+              Jolyne Cujoh is the main character of Stone Ocean. She discovers
+              her Stand ability, Stone Free, and uses it to survive prison.
+            </p>
+
+            <p>
+              Ermes Costello becomes one of Jolyne's closest friends. Her Stand,
+              Kiss, gives her the ability to create stickers that duplicate
+              objects.
+            </p>
+
+            <p>
+              Foo Fighters is a unique being made from plankton who becomes one
+              of Jolyne's allies.
+            </p>
+          </div>
+        </div>
+
+        <div class="fan-club">
+          <h2>The Story</h2>
+
+          <p>
+            Jolyne must uncover the truth behind her imprisonment while facing
+            dangerous enemies and protecting the people she cares about. Her
+            journey takes her through battles, friendship, and unexpected
+            discoveries.
+          </p>
+        </div>
+
+        <img
+          class="story-image"
+          src="https://www.giantbomb.com/a/uploads/scale_medium/36/361609/3391922-jolyne_asb_r.png"
+          alt="Jolyne Cujoh"
+        />
+
+        <a href="#top" class="back-top">Back to Top ↑</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>JoJo's Bizarre Adventure: Stone Ocean</p>
+    </footer>
+  </body>
+</html>
